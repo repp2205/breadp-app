@@ -31,8 +31,11 @@ import { ViewInternalComponent } from './components/view-internal/view-internal.
 import { AdministratorComponent } from './components/administrator/administrator.component';
 import { BakeryComponent } from './components/bakery/bakery.component';
 import { ModalComponent } from './components/bakery/modal/modal.component';
-import {NgxMaterialTimepickerModule} from "ngx-material-timepicker";
-import {CustomValidators} from "./utils/CustomValidators";
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
+import { CustomValidators } from './utils/CustomValidators';
+import { UserService } from './services/user.service';
+import { OrderService } from './services/order.service';
+import { ProductService } from './services/product.service';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
@@ -91,6 +94,9 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     ],
   providers: [
     AuthService,
+    UserService,
+    OrderService,
+    ProductService,
     TranslateService,
     CustomValidators
   ],

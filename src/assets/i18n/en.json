@@ -13,7 +13,9 @@
     "PRODUCTS": "Products",
     "CREATION_DATE": "Creation date",
     "PICK_UP_DATE": "Pickup Date",
-    "BAKERY": "Bakery"
+    "BAKERY": "Bakery",
+    "SUCCESS_USER_TITLE": "Create users",
+    "SUCCESS_USER": "Your user has been created successfully"
   },
   "BUTTONS": {
     "LOGIN": "Login",

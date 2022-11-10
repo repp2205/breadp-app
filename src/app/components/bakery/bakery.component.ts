@@ -82,7 +82,7 @@ export class BakeryComponent implements OnInit {
   openDialog(): void {
     const dialogRef = this.dialog.open(ModalComponent, {
       width: '600px',
-      data: {name: 'asdasd', animal: 'this.animal'},
+      data: { name: 'asdasd', animal: 'this.animal'},
     });
 
     dialogRef.afterClosed().subscribe(result => {

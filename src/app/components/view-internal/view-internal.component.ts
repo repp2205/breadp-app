@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../../services/auth-service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-view-internal',
@@ -11,12 +11,17 @@ export class ViewInternalComponent implements OnInit {
 
   role: string;
 
-  constructor(private router: Router, public authService: AuthService) {
-    this.role = 'user';
+  constructor(private router: Router,
+              public authService: AuthService,
+              private activitedRoute: ActivatedRoute
+              ) {
+    this.role = '';
   }
 
   ngOnInit(): void {
 
+    const role = Number(this.activitedRoute.snapshot.queryParams.r);
+    this.role = (role === 0) ? 'user' : (role === 1) ? 'user' : 'super';
   }
 
   setLanguage(language: string): void {

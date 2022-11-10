@@ -1,5 +1,8 @@
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { UserService } from '../../services/user.service';
 import { CustomValidators } from '../../utils/CustomValidators';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
@@ -14,7 +17,10 @@ export class RegisterComponent implements OnInit {
   hideConfirm: boolean;
   formRegister: FormGroup;
 
-  constructor(private router: Router) {
+  constructor(private router: Router,
+              private userService: UserService,
+              private toastService: ToastrService,
+              private translateService: TranslateService) {
     this.hide = true;
     this.hideConfirm = true;
     const regex = new RegExp('^\\w+([.-_+]?\\w+)*@\\w+([.-]?\\w+)*(\\.\\w{2,10})+$');
@@ -37,5 +43,24 @@ export class RegisterComponent implements OnInit {
 
   goToLogin(): void {
     this.router.navigate(['login']);
+  }
+
+  register(): void {
+    const user = {
+      name: this.formRegister.controls.name.value,
+      last_name: this.formRegister.controls.lastName.value,
+      email: this.formRegister.controls.email.value,
+      phone: this.formRegister.controls.phone.value,
+      password: btoa(this.formRegister.controls.password.value),
+      role: this.formRegister.controls.role.value,
+    }
+    this.userService.register(user).subscribe((response: any) => {
+      this.toastService.success(this.translateService.instant('LABELS.SUCCESS_USER'), this.translateService.instant('LABELS.SUCCESS_USER_TITLE'));
+      setTimeout(() => {
+        this.router.navigate(['login']);
+      }, 5000);
+    }, (error: any) => {
+      console.log(error);
+    });
   }
 }

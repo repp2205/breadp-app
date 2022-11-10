@@ -1,5 +1,6 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../../services/user.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -12,7 +13,8 @@ export class LoginComponent implements OnInit {
   hide: boolean;
   formLogin: FormGroup;
 
-  constructor(private router: Router) {
+  constructor(private router: Router,
+              private userService: UserService) {
     this.hide = true;
     const regex = new RegExp('^\\w+([.-_+]?\\w+)*@\\w+([.-]?\\w+)*(\\.\\w{2,10})+$');
     this.formLogin = new FormGroup({
@@ -26,7 +28,13 @@ export class LoginComponent implements OnInit {
   }
 
   login(): void {
-    this.router.navigate(['home']);
+    this.userService.login(this.formLogin.controls.user.value, btoa(this.formLogin.controls.password.value)).subscribe((response: any) => {
+      this.router.navigate(['home'], {
+          queryParams: { r: response.role },
+        });
+    }, (error: any) => {
+      console.log(error);
+    });
   }
 
   goToRegister(): void {

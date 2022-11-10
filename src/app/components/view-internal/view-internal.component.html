@@ -15,5 +15,5 @@
 </div>
 <div class="container-body">
   <app-user *ngIf="role === 'user'"></app-user>
-  <app-administrator *ngIf="role === 'admin'"></app-administrator>
+  <app-administrator *ngIf="role === 'admin' || role === 'super'"></app-administrator>
 </div>

@@ -13,7 +13,9 @@
     "PRODUCTS": "Productos",
     "CREATION_DATE": "Fecha de creación",
     "PICK_UP_DATE": "Fecha de recogida",
-    "BAKERY": "Panaderia"
+    "BAKERY": "Panaderia",
+    "SUCCESS_USER_TITLE": "Creación de usuarios",
+    "SUCCESS_USER": "Tu usuario ha sido creado exitosamente"
   },
   "BUTTONS": {
     "LOGIN": "Ingresar",
