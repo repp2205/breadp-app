@@ -1,0 +1,77 @@
+<form novalidate [formGroup]="formRegister">
+  <div class="container-header">
+    <div class="container-header-img">
+
+      <img class="bread-back" src="assets/img/background.jpg" style="width: 100%">
+    </div>
+    <div class="container-header-form">
+      <img src="assets/img/logo.jpg">
+      <mat-form-field appearance="fill">
+        <mat-label>Nombre</mat-label>
+        <input type="text" matInput formControlName="name" placeholder="Nombre">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Apellido</mat-label>
+        <input type="text" matInput formControlName="lastName" placeholder="Apellido">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Correo electronico</mat-label>
+        <input type="email" matInput formControlName="email" placeholder="Email">
+        <mat-error *ngIf="formRegister.controls.email.hasError('pattern')">
+          {{'ERRORS.USER_FORMAT' | translate}}
+        </mat-error>
+        <mat-error *ngIf="formRegister.controls.email.hasError('required')">
+          {{'ERRORS.USER_REQUIRED' | translate}}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Telefono</mat-label>
+        <input type="text" matInput formControlName="phone" placeholder="Número de telefono">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>{{'LABELS.PASSWORD' | translate}}</mat-label>
+        <input type="password" matInput formControlName="password" [type]="hide ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-error *ngIf="formRegister.controls.password.hasError('required')">
+          {{'ERRORS.PASSWORD_REQUIRED' | translate}}
+        </mat-error>
+        <mat-error *ngIf="formRegister.controls.password.hasError('minlength')">
+          {{'ERRORS.PASSWORD_PATTERN' | translate}}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>{{'LABELS.CONFIRM_PASSWORD' | translate}} *</mat-label>
+        <input formControlName="confirmPassword" type="password"  matInput [type]="hideConfirm ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="hideConfirm = !hideConfirm" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hideConfirm">
+          <mat-icon>{{hideConfirm ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-error *ngIf="formRegister.controls.confirmPassword.hasError('required')">
+          {{'ERRORS.PASSWORD_REQUIRED' | translate}}
+        </mat-error>
+        <mat-error *ngIf="formRegister.controls.confirmPassword.hasError('minlength')">
+          {{'ERRORS.PASSWORD_PATTERN' | translate}}
+        </mat-error>
+        <mat-error *ngIf="formRegister.controls.confirmPassword.hasError('matching')">
+          {{'ERRORS.PASSWORD_COINCIDE' | translate}}
+        </mat-error>
+      </mat-form-field>
+
+      <div class="container-header-button">
+        <button  mat-raised-button (click)="goToLogin()">
+          Volver
+        </button>
+        <button  mat-raised-button color="primary" [disabled]="formRegister.invalid" (click)="goToLogin()">
+          Registrarme
+        </button>
+      </div>
+    </div>
+  </div>
+</form>
+
