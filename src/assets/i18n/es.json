@@ -1,0 +1,42 @@
+{
+  "LABELS": {
+    "USER": "Usuario",
+    "USER_PLACEHOLDER": "Ex. pat@example.com",
+    "CONFIRM_PASSWORD": "Confirmar contraseña",
+    "PASSWORD": "Password",
+    "ES": "Español",
+    "EN": "Ingles",
+    "CREATED": "Creada",
+    "DELIVERED": "Entregada",
+    "CANCEL": "Cancelada",
+    "ORDER": "Orden",
+    "PRODUCTS": "Productos",
+    "CREATION_DATE": "Fecha de creación",
+    "PICK_UP_DATE": "Fecha de recogida",
+    "BAKERY": "Panaderia"
+  },
+  "BUTTONS": {
+    "LOGIN": "Ingresar",
+    "LOGOUT": "Cerrar Sesión",
+    "SEARCH": "Buscar",
+    "NEW": "Crear",
+    "EDIT": "Editar",
+    "NEW_GUIDE": "Generar guía",
+    "DELETE": "Eliminar",
+    "SAVE": "Guardar",
+    "DOWNLOAD": "Descargar",
+    "UPDATE": "Actualizar",
+    "CANCEL": "Cancelar"
+  },
+  "ERRORS": {
+    "USER_FORMAT": "Por favor ingrese un correo válido",
+    "USER_REQUIRED": "El correo es requerido",
+    "PASSWORD_REQUIRED": "La contraseña es requerida",
+    "PASSWORD_PATTERN": "La contraseña debe tener mínimo 6 caracteres",
+    "PASSWORD_COINCIDE": "Las contraseñas no coinciden",
+    "OBLIGATORY_FIELD": "El campo es obligatorio",
+    "LOAD_DATA": "No se cargaron los datos, intenta de nuevo",
+    "TITLE": "Lo sentimos",
+    "USER": "Tu usuario no pudo ser generado"
+  }
+}

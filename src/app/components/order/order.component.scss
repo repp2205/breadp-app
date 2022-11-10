@@ -1,0 +1,16 @@
+mat-card{ margin: 1rem 0}
+::ng-deep mat-expansion-panel {box-shadow: none !important;}
+span.status {
+  padding: 5px;
+  border-radius: 26px;
+  color: #FFFFFF;
+}
+.DELIVERED {
+  background: #12af12;
+}
+.CREATED {
+  background: darkorange;
+}
+.CANCEL {
+  background: #d4001b;
+}

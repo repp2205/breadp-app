@@ -1,0 +1,55 @@
+<h1 mat-dialog-title>Haz tu orden</h1>
+<div mat-dialog-content>
+  Elige tus productos
+  <mat-stepper orientation="vertical" [linear]="true" #stepper>
+    <mat-step>
+      <ng-template matStepLabel>Selecciona tus productos</ng-template>
+      <mat-expansion-panel *ngFor="let category of categories" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{category}}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-card>
+          <mat-card-content>
+            q
+          </mat-card-content>
+          <mat-card-actions align="end">
+
+          </mat-card-actions>
+        </mat-card>
+      </mat-expansion-panel>
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Elige la hora para recoger tus productos</ng-template>
+      <ngx-timepicker-field [format]="24" [defaultTime]="'23:11'"></ngx-timepicker-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Detalle de tu orden</ng-template>
+      <p>.asdasd</p>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Estado</ng-template>
+      <p>Estado</p>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+      </div>
+    </mat-step>
+  </mat-stepper>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancelar</button>
+  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ordenar</button>
+</div>

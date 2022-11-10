@@ -1,0 +1,42 @@
+{
+  "LABELS": {
+    "USER": "User",
+    "USER_PLACEHOLDER": "Ex. pat@example.com",
+    "CONFIRM_PASSWORD": "Confirm password",
+    "PASSWORD": "Password",
+    "ES": "Spanish",
+    "EN": "English",
+    "CREATED": "Created",
+    "DELIVERED": "Delivered",
+    "CANCEL": "Cancelled",
+    "ORDER": "Order",
+    "PRODUCTS": "Products",
+    "CREATION_DATE": "Creation date",
+    "PICK_UP_DATE": "Pickup Date",
+    "BAKERY": "Bakery"
+  },
+  "BUTTONS": {
+    "LOGIN": "Login",
+    "LOGOUT": "Close",
+    "SEARCH": "Search",
+    "NEW": "Create",
+    "EDIT": "Edit",
+    "NEW_GUIDE": "Generate Guide",
+    "DELETE": "Delete",
+    "SAVE": "Save",
+    "DOWNLOAD": "Download",
+    "UPDATE": "Update",
+    "CANCEL": "Cancel"
+  },
+  "ERRORS": {
+    "USER_FORMAT": "Please enter a valid email",
+    "USER_REQUIRED": "The email is required",
+    "PASSWORD_REQUIRED": "Password is required",
+    "PASSWORD_PATTERN": "The password must have at least 6 characters",
+    "PASSWORD_COINCIDE": "Passwords do not match",
+    "OBLIGATORY_FIELD": "Field is required",
+    "LOAD_DATA": "Data not loaded, please try again",
+    "TITLE": "Sorry",
+    "USER": "Your user did not put generated"
+  }
+}

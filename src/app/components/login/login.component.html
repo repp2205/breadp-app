@@ -1,0 +1,37 @@
+<form novalidate [formGroup]="formLogin">
+  <div class="container-header">
+    <div class="container-header-img">
+      <img src="assets/img/logo.jpg">
+    </div>
+    <div class="container-header-form">
+      <mat-form-field appearance="fill">
+        <mat-label>{{'LABELS.USER' | translate}}</mat-label>
+        <input type="email" matInput formControlName="user" placeholder="{{'LABELS.USER_PLACEHOLDER' | translate}}">
+        <mat-error *ngIf="formLogin.controls.user.hasError('pattern')">
+          {{'ERRORS.USER_FORMAT' | translate}}
+        </mat-error>
+        <mat-error *ngIf="formLogin.controls.user.hasError('required')">
+          {{'ERRORS.USER_REQUIRED' | translate}}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>{{'LABELS.PASSWORD' | translate}}</mat-label>
+        <input type="password" matInput formControlName="password" [type]="hide ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-error *ngIf="formLogin.controls.password.hasError('minlength')">
+          {{'ERRORS.PASSWORD_PATTERN' | translate}}
+        </mat-error>
+      </mat-form-field>
+
+      <button  mat-raised-button color="primary" [disabled]="formLogin.invalid" (click)="login()">
+        {{'BUTTONS.LOGIN' | translate}}
+      </button>
+
+      <a (click)="goToRegister()" class="register">Registrarme</a>
+    </div>
+  </div>
+</form>
+<img class="bread-back" src="assets/img/background.jpg" style="width: 100%">
