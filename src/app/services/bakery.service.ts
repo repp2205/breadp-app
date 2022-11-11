@@ -9,4 +9,10 @@ import { environment } from 'src/environments/environment';
 export class BakeryService {
 
   constructor(private http: HttpClient) { }
+
+  getBakerys(): any {
+    return this.http.get(`${environment.API_ENDPOINT}/bakery`).pipe(
+      map((result: any) => result)
+    );
+  }
 }

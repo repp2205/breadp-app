@@ -14,7 +14,6 @@ export class OrderComponent implements OnInit {
 
   @Input() orderList: any[];
   panelOpenState: boolean;
-  listProducts: MatTableDataSource<any>;
   displayedColumns: string[];
 
   constructor(private orderService: OrderService,
@@ -23,7 +22,6 @@ export class OrderComponent implements OnInit {
               private translateService: TranslateService) {
     this.panelOpenState = false;
     this.orderList = [];
-    this.listProducts = new MatTableDataSource<any>();
     this.displayedColumns = ['id', 'image', 'name', 'category', 'quantity', 'total_amount'];
   }
 
@@ -37,9 +35,11 @@ export class OrderComponent implements OnInit {
 
   getOrdersByUserId(userId: number) {
     this.orderService.getOrdersByUser(userId).subscribe((response: any) => {
-      this.orderList.push(response);
+      this.orderList = response;
       this.orderList.forEach(item => {
-        this.listProducts = new MatTableDataSource(item.products);
+        const total = item.products.map((item: any) => { return item.total_amount }).reduce((partialSum: any, a: any) => partialSum + a, 0);
+        item.products.push({ total_amount: total });
+        item.products = new MatTableDataSource(item.products);
       });
     },(error: any) => {
       this.toastService.error(this.translateService.instant('ERRORS.ORDER_LIST'), this.translateService.instant('ERRORS.TITLE'));

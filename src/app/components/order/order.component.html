@@ -1,5 +1,5 @@
 <mat-card *ngFor="let order of orderList">
-  <mat-card-title>{{ 'LABELS.ORDER' | translate }} Nº {{order.id}}</mat-card-title>
+  <mat-card-title>{{ 'LABELS.ORDER' | translate }} Nº {{order.orderId}}</mat-card-title>
   <mat-card-subtitle>
     {{ 'LABELS.CREATION_DATE' | translate}}: {{order.orderDate}} /
     {{ 'LABELS.PICK_UP_DATE' | translate}}: {{order.pickUpTime}}
@@ -11,7 +11,7 @@
           {{ 'LABELS.PRODUCTS' | translate }}:
         </mat-panel-title>
       </mat-expansion-panel-header>
-      <table mat-table [dataSource]="listProducts" *ngIf="listProducts.data.length > 0">
+      <table mat-table [dataSource]="order.products" *ngIf="order.products.data.length > 0">
         <ng-container matColumnDef="id">
           <th mat-header-cell *matHeaderCellDef>ID</th>
           <td mat-cell *matCellDef="let element">{{element.id}}</td>
@@ -19,7 +19,7 @@
         <ng-container matColumnDef="image">
           <th mat-header-cell *matHeaderCellDef>{{ 'LABELS.IMAGE' | translate }}</th>
           <td mat-cell *matCellDef="let element">
-            <img src="{{element.image}}"/></td>
+            <img *ngIf="element.image" src="{{element.image}}"/></td>
         </ng-container>
         <ng-container matColumnDef="name">
           <th mat-header-cell *matHeaderCellDef>{{ 'LABELS.NAME' | translate }}</th>

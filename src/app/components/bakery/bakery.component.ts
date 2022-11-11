@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalComponent } from './modal/modal.component';
+import { BakeryService } from '../../services/bakery.service';
 
 @Component({
   selector: 'app-bakery',
@@ -11,72 +12,19 @@ export class BakeryComponent implements OnInit {
 
   bakeryList: any[];
   productList: any[];
-  branchOfficeList: any[];
   panelOpenState: boolean;
 
-  constructor(public dialog: MatDialog) {
+  constructor(public dialog: MatDialog,
+              private bakeryService: BakeryService) {
     this.panelOpenState = false;
-    this.bakeryList = [
-      { id: 1,
-        name: 'Panaderia 1',
-        nit: '23161321-1',
-        address: 'Carrera 91 # 27 - 16',
-        contactPhone: 3222222,
-        supportEmail: 'da@da.co'
-      },
-      { id: 2,
-        name: 'Panaderia 2',
-        nit: '998942-1',
-        address: 'Carrera 91 # 27 - 16',
-        contactPhone: 5445632,
-        supportEmail: 'da@da.co'
-      },
-      { id: 3,
-        name: 'Panaderia 3',
-        nit: '018516516-1',
-        address: 'Carrera 91 # 27 - 16',
-        contactPhone: 7896542,
-        supportEmail: 'da@da.co'
-      },
-      { id: 1,
-        name: 'Panaderia 4',
-        nit: '1234664-1',
-        address: 'Carrera 91 # 27 - 16',
-        contactPhone: 7896542,
-        supportEmail: 'da@da.co'
-      },
-    ];
-
-    this.branchOfficeList = [
-      {
-        name: 'Sucursal 1',
-        contactPhone: 7896542,
-        supportEmail: 'da@da.co',
-        openingTime: '07:00',
-        closingTime: '22:00'
-      },
-      {
-        name: 'Sucursal 2',
-        contactPhone: 7896542,
-        supportEmail: 'da@da.co',
-        openingTime: '07:00',
-        closingTime: '22:00'
-      },
-      {
-        name: 'Sucursal 3',
-        contactPhone: 7896542,
-        supportEmail: 'da@da.co',
-        openingTime: '07:00',
-        closingTime: '22:00'
-      }
-    ];
-
+    this.bakeryList = [];
     this.productList = [
       {}
     ];
   }
 
   ngOnInit(): void {
+    this.getBakerys();
   }
 
   openDialog(): void {
@@ -87,6 +35,14 @@ export class BakeryComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
+    });
+  }
+
+  getBakerys() {
+    this.bakeryService.getBakerys().subscribe((response: any) => {
+      this.bakeryList = response;
+    }, (error: any) => {
+      console.log(error);
     });
   }
 }
