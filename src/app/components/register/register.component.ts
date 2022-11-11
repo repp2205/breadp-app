@@ -57,6 +57,7 @@ export class RegisterComponent implements OnInit {
     this.userService.register(user).subscribe((response: any) => {
       this.toastService.success(this.translateService.instant('LABELS.SUCCESS_USER'), this.translateService.instant('LABELS.SUCCESS_USER_TITLE'));
       setTimeout(() => {
+        this.formRegister.reset(true);
         this.router.navigate(['login']);
       }, 5000);
     }, (error: any) => {

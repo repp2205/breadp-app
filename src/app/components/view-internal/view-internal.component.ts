@@ -19,7 +19,6 @@ export class ViewInternalComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
     const role = Number(this.activitedRoute.snapshot.queryParams.r);
     this.role = (role === 0) ? 'user' : (role === 1) ? 'user' : 'super';
   }

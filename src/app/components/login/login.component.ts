@@ -1,5 +1,7 @@
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { UserService } from '../../services/user.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
@@ -14,7 +16,9 @@ export class LoginComponent implements OnInit {
   formLogin: FormGroup;
 
   constructor(private router: Router,
-              private userService: UserService) {
+              private userService: UserService,
+              private toastService: ToastrService,
+              private translateService: TranslateService) {
     this.hide = true;
     const regex = new RegExp('^\\w+([.-_+]?\\w+)*@\\w+([.-]?\\w+)*(\\.\\w{2,10})+$');
     this.formLogin = new FormGroup({
@@ -30,10 +34,10 @@ export class LoginComponent implements OnInit {
   login(): void {
     this.userService.login(this.formLogin.controls.user.value, btoa(this.formLogin.controls.password.value)).subscribe((response: any) => {
       this.router.navigate(['home'], {
-          queryParams: { r: response.role },
+          queryParams: { r: response.role, u: response.id },
         });
     }, (error: any) => {
-      console.log(error);
+      this.toastService.error(this.translateService.instant('ERRORS.USER_PASSWORD'), this.translateService.instant('ERRORS.TITLE'));
     });
   }
 

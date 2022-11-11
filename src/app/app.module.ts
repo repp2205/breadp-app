@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { ToastrModule } from 'ngx-toastr';
 import { AppComponent } from './app.component';
 import { AuthService } from './services/auth-service';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -9,6 +8,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatCardModule } from '@angular/material/card';
 import { AppRoutingModule } from './app-routing.module';
+import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserModule } from '@angular/platform-browser';
@@ -96,6 +96,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     AuthService,
     UserService,
     OrderService,
+    ToastrService,
     ProductService,
     TranslateService,
     CustomValidators
