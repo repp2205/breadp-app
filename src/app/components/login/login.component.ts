@@ -34,10 +34,10 @@ export class LoginComponent implements OnInit {
   login(): void {
     this.userService.login(this.formLogin.controls.user.value, btoa(this.formLogin.controls.password.value)).subscribe((response: any) => {
       let q = { r: response.role, u: response.id };
-      if (response === '1') {
+      if (response.role === 1) {
         // @ts-ignore
         q.b = response.branchOfficeId;
-      } else if (response === '2') {
+      } else if (response.role === 2) {
         // @ts-ignore
         q.b = response.bakeryId;
       }

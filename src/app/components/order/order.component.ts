@@ -29,6 +29,10 @@ export class OrderComponent implements OnInit {
 
   ngOnInit(): void {
     this.role = Number(this.activitedRoute.snapshot.queryParams.r)
+    this.listOrders();
+  }
+
+  listOrders() {
     if (this.role === 0) {
       this.getOrdersByUserId(Number(this.activitedRoute.snapshot.queryParams.u));
     } else {
@@ -68,9 +72,9 @@ export class OrderComponent implements OnInit {
 
   updateOrder(orderId: number, status: number) {
     this.orderService.updateOrder(orderId, status).subscribe((response: any) => {
-
+      this.listOrders();
     }, error => {
-
+      console.log(error);
     });
   }
 }
