@@ -13,6 +13,7 @@
     "PRODUCTS": "Products",
     "IMAGE": "Image",
     "NAME": "Name",
+    "LAST_NAME": "Last name",
     "CATEGORY": "Category",
     "QUANTITY": "Quantity",
     "TOTAL": "Total",
@@ -20,7 +21,14 @@
     "PICK_UP_DATE": "Pickup Date",
     "BAKERY": "Bakery",
     "SUCCESS_USER_TITLE": "Create users",
-    "SUCCESS_USER": "Your user has been created successfully"
+    "SUCCESS_USER": "Your user has been created successfully",
+    "ADDRESS": "Address",
+    "MY_ORDERS": "My orders",
+    "PHONE": "Phone",
+    "EMAIL": "Email",
+    "HEADQUARTERS": "Headquarters",
+    "SCHEDULE": "Schedule",
+    "SEE_PRODUCTS": "See Products"
   },
   "BUTTONS": {
     "LOGIN": "Login",
@@ -33,6 +41,8 @@
     "SAVE": "Save",
     "DOWNLOAD": "Download",
     "UPDATE": "Update",
+    "REGISTER": "Register",
+    "RETURN": "Return",
     "CANCEL": "Cancel"
   },
   "ERRORS": {

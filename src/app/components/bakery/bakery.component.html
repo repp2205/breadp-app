@@ -4,13 +4,13 @@
     NIT: {{bakery.nit}}
   </mat-card-subtitle>
   <mat-card-content>
-    <p>Dirreción: {{bakery.address}}</p>
-    <p>Teléfono: {{bakery.contactPhone}}</p>
-    <p>Email contacto: {{bakery.supportEmail}}</p>
+    <p>{{ 'LABELS.ADDRESS' | translate }} {{bakery.address}}</p>
+    <p>{{ 'LABELS.PHONE' | translate }}: {{bakery.contactPhone}}</p>
+    <p>{{ 'LABELS.EMAIL' | translate }}: {{bakery.supportEmail}}</p>
     <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
       <mat-expansion-panel-header>
         <mat-panel-title>
-          Sedes:
+          {{ 'LABELS.HEADQUARTERS' | translate }}:
         </mat-panel-title>
       </mat-expansion-panel-header>
       <mat-card *ngFor="let branchOffice of bakery.campus">
@@ -18,12 +18,12 @@
           <mat-card-subtitle>
             {{branchOffice.name}}
           </mat-card-subtitle>
-          <p>Dirreción: {{bakery.address}}</p>
-          <p>Horario: {{branchOffice.openingTime}} / {{branchOffice.closingTime}} </p>
-          <p>Teléfono: {{branchOffice.contactPhone}}</p>
+          <p>{{ 'LABELS.ADDRESS' | translate }}: {{bakery.address}}</p>
+          <p>{{ 'LABELS.SCHEDULE' | translate }}: {{branchOffice.openingTime}} / {{branchOffice.closingTime}} </p>
+          <p>{{ 'LABELS.PHONE' | translate }}: {{branchOffice.contactPhone}}</p>
         </mat-card-content>
         <mat-card-actions align="end">
-          <button mat-raised-button color="primary" (click)="openDialog()">Ver productos</button>
+          <button mat-raised-button color="primary" (click)="openDialog()">{{ 'LABELS.SEE_PRODUCTS' | translate }}</button>
         </mat-card-actions>
       </mat-card>
       <p *ngFor="let product of bakery.products">{{product.name}}: {{product.quantity}}</p>

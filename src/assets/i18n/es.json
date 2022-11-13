@@ -13,6 +13,7 @@
     "PRODUCTS": "Productos",
     "IMAGE": "Imagen",
     "NAME": "Nombre",
+    "LAST_NAME": "Apellido",
     "CATEGORY": "Categoria",
     "QUANTITY": "Cantidad",
     "TOTAL": "Total",
@@ -20,7 +21,14 @@
     "PICK_UP_DATE": "Fecha de recogida",
     "BAKERY": "Panaderia",
     "SUCCESS_USER_TITLE": "Creación de usuarios",
-    "SUCCESS_USER": "Tu usuario ha sido creado exitosamente"
+    "SUCCESS_USER": "Tu usuario ha sido creado exitosamente",
+    "ADDRESS": "Dirección",
+    "MY_ORDERS": "Mis ordenes",
+    "PHONE": "Teléfono",
+    "EMAIL": "Correo electrónico",
+    "HEADQUARTERS": "Sedes",
+    "SCHEDULE": "Horario",
+    "SEE_PRODUCTS": "Ver productos",
   },
   "BUTTONS": {
     "LOGIN": "Ingresar",
@@ -33,6 +41,8 @@
     "SAVE": "Guardar",
     "DOWNLOAD": "Descargar",
     "UPDATE": "Actualizar",
+    "REGISTER": "Registrarme",
+    "RETURN": "Volver",
     "CANCEL": "Cancelar"
   },
   "ERRORS": {
