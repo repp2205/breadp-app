@@ -27,4 +27,10 @@ export class OrderService {
       map((result: any) => result)
     );
   }
+
+  updateOrder(orderId: number, status: number) {
+    return this.http.put(`${environment.API_ENDPOINT}/order/${orderId}`, { status: status }).pipe(
+      map((result: any) => result)
+    );
+  }
 }

@@ -36,6 +36,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { ViewInternalComponent } from './components/view-internal/view-internal.component';
 import { AdministratorComponent } from './components/administrator/administrator.component';
+import { ReportsComponent } from './components/reports/reports.component';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
@@ -52,6 +53,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     RegisterComponent,
     ViewInternalComponent,
     AdministratorComponent,
+    ReportsComponent,
   ],
     imports: [
         BrowserModule,

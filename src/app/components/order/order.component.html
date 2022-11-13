@@ -1,5 +1,10 @@
 <mat-card *ngFor="let order of orderList">
-  <mat-card-title>{{ 'LABELS.ORDER' | translate }} Nº {{order.orderId}}</mat-card-title>
+  <div class="order-header">
+    <mat-card-title>{{ 'LABELS.ORDER' | translate }} Nº {{order.orderId}}</mat-card-title>
+    <span class="status {{getStatusOrder(order.status)}}">
+      {{ 'LABELS.' + getStatusOrder(order.status) | translate}}
+    </span>
+  </div>
   <mat-card-subtitle>
     {{ 'LABELS.CREATION_DATE' | translate}}: {{order.orderDate}} /
     {{ 'LABELS.PICK_UP_DATE' | translate}}: {{order.pickUpTime}}
@@ -43,10 +48,14 @@
     </mat-expansion-panel>
   </mat-card-content>
   <mat-card-actions align="end">
-    <mat-card-content>
-      <span class="status {{getStatusOrder(order.status)}}">
-        {{ 'LABELS.' + getStatusOrder(order.status) | translate}}
-      </span>
-    </mat-card-content>
+    <button *ngIf="role === 0 && order.status === 0" (click)="updateOrder(order.orderId, 2)" color="warn" mat-button>
+      {{ 'BUTTONS.CANCEL' | translate }}
+    </button>
+    <button *ngIf="role === 1 && order.status === 0" (click)="updateOrder(order.orderId, 1)" color="primary" mat-button>
+      {{ 'BUTTONS.DELIVERED' | translate }}
+    </button>
+    <button *ngIf="role === 1 && order.status === 0" (click)="updateOrder(order.orderId, 2)" color="warn" mat-button>
+      {{ 'BUTTONS.CANCEL' | translate }}
+    </button>
   </mat-card-actions>
 </mat-card>

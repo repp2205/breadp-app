@@ -13,14 +13,13 @@ export class ViewInternalComponent implements OnInit {
 
   constructor(private router: Router,
               public authService: AuthService,
-              private activitedRoute: ActivatedRoute
-              ) {
+              private activitedRoute: ActivatedRoute) {
     this.role = '';
   }
 
   ngOnInit(): void {
     const role = Number(this.activitedRoute.snapshot.queryParams.r);
-    this.role = (role === 0) ? 'user' : (role === 1) ? 'user' : 'super';
+    this.role = (role === 0) ? 'user' : (role === 1) ? 'admin' : 'super';
   }
 
   setLanguage(language: string): void {

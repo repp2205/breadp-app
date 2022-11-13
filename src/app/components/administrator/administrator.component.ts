@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-administrator',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdministratorComponent implements OnInit {
 
-  constructor() { }
+  role: number;
+
+  constructor(private activitedRoute: ActivatedRoute) {
+    this.role = 0;
+  }
 
   ngOnInit(): void {
+    this.role = Number(this.activitedRoute.snapshot.queryParams.r)
   }
 
 }

@@ -33,8 +33,16 @@ export class LoginComponent implements OnInit {
 
   login(): void {
     this.userService.login(this.formLogin.controls.user.value, btoa(this.formLogin.controls.password.value)).subscribe((response: any) => {
+      let q = { r: response.role, u: response.id };
+      if (response === '1') {
+        // @ts-ignore
+        q.b = response.branchOfficeId;
+      } else if (response === '2') {
+        // @ts-ignore
+        q.b = response.bakeryId;
+      }
       this.router.navigate(['home'], {
-          queryParams: { r: response.role, u: response.id },
+          queryParams: q,
         });
     }, (error: any) => {
       this.toastService.error(this.translateService.instant('ERRORS.USER_PASSWORD'), this.translateService.instant('ERRORS.TITLE'));

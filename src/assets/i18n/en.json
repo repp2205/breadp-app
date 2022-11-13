@@ -1,6 +1,7 @@
 {
   "LABELS": {
     "USER": "User",
+    "REPORTS": "Reports",
     "USER_PLACEHOLDER": "Ex. pat@example.com",
     "CONFIRM_PASSWORD": "Confirm password",
     "PASSWORD": "Password",
@@ -56,7 +57,8 @@
     "RETURN": "Return",
     "CANCEL": "Cancel",
     "NEXT": "Next",
-    "UNDERSTOOD": "Understood"
+    "UNDERSTOOD": "Understood",
+    "DELIVERED": "Delivered"
   },
   "ERRORS": {
     "USER_FORMAT": "Please enter a valid email",
