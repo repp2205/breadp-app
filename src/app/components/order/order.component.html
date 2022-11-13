@@ -33,9 +33,9 @@
           <th mat-header-cell *matHeaderCellDef>{{ 'LABELS.QUANTITY' | translate }}</th>
           <td mat-cell *matCellDef="let element">{{element.quantity}}</td>
         </ng-container>
-        <ng-container matColumnDef="total_amount">
+        <ng-container matColumnDef="totalAmount">
           <th mat-header-cell *matHeaderCellDef>{{ 'LABELS.TOTAL' | translate }}</th>
-          <td mat-cell *matCellDef="let element">$ {{element.total_amount}} COP</td>
+          <td mat-cell *matCellDef="let element">$ {{element.totalAmount}} COP</td>
         </ng-container>
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

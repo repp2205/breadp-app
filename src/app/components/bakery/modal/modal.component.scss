@@ -1,0 +1,28 @@
+table {width: 100%};
+img {
+  width: 5rem;
+  height: 5rem;
+}
+.buttons{
+  text-align: right;margin: 1rem 0 0;
+}
+::ng-deep .ngx-timepicker {
+  justify-content: center;
+  width: 25%;
+  margin: auto;
+}
+.success-icon {
+  color: #12af12;
+  font-size: 3rem;
+}
+.error-icon {
+  color: #d4001b;
+  font-size: 3rem;
+}
+.status-order {
+  width: 100%;
+  text-align: center;
+}
+.italic {
+  font-style: italic;
+}

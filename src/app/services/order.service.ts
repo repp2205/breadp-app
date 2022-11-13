@@ -21,4 +21,10 @@ export class OrderService {
       map((result: any) => result)
     );
   }
+
+  createOrder(order: any) {
+    return this.http.post(`${environment.API_ENDPOINT}/order`, order).pipe(
+      map((result: any) => result)
+    );
+  }
 }

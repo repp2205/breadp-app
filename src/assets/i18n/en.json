@@ -28,7 +28,19 @@
     "EMAIL": "Email",
     "HEADQUARTERS": "Headquarters",
     "SCHEDULE": "Schedule",
-    "SEE_PRODUCTS": "See Products"
+    "PICK_UP_TIME": "Pick up time",
+    "SEE_PRODUCTS": "See Products",
+    "STATUS": "Status",
+    "NEW_ORDER_TITLE": "Place your order in",
+    "ORDER_STEP_1": "Select your products",
+    "ORDER_STEP_2": "Choose the time to collect your products",
+    "ORDER_STEP_3": "Detail of your order",
+    "ORDER_STEP_4": "End state",
+    "UNIT_VALUE": "Unit value",
+    "TOTAL_VALUE": "Total value",
+    "CHOOSE_AMOUNT": "Choose amount",
+    "ORDER_SUCCESS": "Your order was created successfully",
+    "ORDER_CODE": "Code of your order"
   },
   "BUTTONS": {
     "LOGIN": "Login",
@@ -36,14 +48,15 @@
     "SEARCH": "Search",
     "NEW": "Create",
     "EDIT": "Edit",
-    "NEW_GUIDE": "Generate Guide",
     "DELETE": "Delete",
     "SAVE": "Save",
     "DOWNLOAD": "Download",
     "UPDATE": "Update",
     "REGISTER": "Register",
     "RETURN": "Return",
-    "CANCEL": "Cancel"
+    "CANCEL": "Cancel",
+    "NEXT": "Next",
+    "UNDERSTOOD": "Understood"
   },
   "ERRORS": {
     "USER_FORMAT": "Please enter a valid email",
@@ -56,6 +69,9 @@
     "ORDER_LIST": "We couldn't get your orders, please try again later",
     "LOAD_DATA": "Data not loaded, please try again",
     "TITLE": "Sorry",
-    "USER": "Your user did not put generated"
+    "USER": "Your user did not put generated",
+    "NO_PRODUCTS":"There are no products in this bakery",
+    "ERROR_PRODUCTS":"We couldn't get the list of products",
+    "ORDER_CREATE": "We couldn't create your order, please try again later"
   }
 }

@@ -23,7 +23,7 @@
           <p>{{ 'LABELS.PHONE' | translate }}: {{branchOffice.contactPhone}}</p>
         </mat-card-content>
         <mat-card-actions align="end">
-          <button mat-raised-button color="primary" (click)="openDialog()">{{ 'LABELS.SEE_PRODUCTS' | translate }}</button>
+          <button mat-raised-button color="primary" (click)="openDialog(branchOffice)">{{ 'LABELS.SEE_PRODUCTS' | translate }}</button>
         </mat-card-actions>
       </mat-card>
       <p *ngFor="let product of bakery.products">{{product.name}}: {{product.quantity}}</p>

@@ -9,4 +9,10 @@ import { environment } from 'src/environments/environment';
 export class BranchOfficeService {
 
   constructor(private http: HttpClient) { }
+
+  getProductsByBranchOffice(id: number): any {
+    return this.http.get(`${environment.API_ENDPOINT}/branchOffice/products/${id}`).pipe(
+      map((result: any) => result)
+    );
+  }
 }

@@ -28,7 +28,19 @@
     "EMAIL": "Correo electrónico",
     "HEADQUARTERS": "Sedes",
     "SCHEDULE": "Horario",
+    "PICK_UP_TIME": "Hora de recogida",
     "SEE_PRODUCTS": "Ver productos",
+    "STATUS": "Estado",
+    "NEW_ORDER_TITLE": "Haz tu orden en",
+    "ORDER_STEP_1": "Selecciona tus productos",
+    "ORDER_STEP_2": "Elige la hora para recoger tus productos",
+    "ORDER_STEP_3": "Detalle de tu orden",
+    "ORDER_STEP_4": "Estado final",
+    "UNIT_VALUE": "Valor unitario",
+    "TOTAL_VALUE": "Valor total",
+    "CHOOSE_AMOUNT": "Escoge la cantidad",
+    "ORDER_SUCCESS": "Tu orden fue creada exitosamente",
+    "ORDER_CODE": "Código de tu orden"
   },
   "BUTTONS": {
     "LOGIN": "Ingresar",
@@ -36,14 +48,15 @@
     "SEARCH": "Buscar",
     "NEW": "Crear",
     "EDIT": "Editar",
-    "NEW_GUIDE": "Generar guía",
     "DELETE": "Eliminar",
     "SAVE": "Guardar",
     "DOWNLOAD": "Descargar",
     "UPDATE": "Actualizar",
     "REGISTER": "Registrarme",
     "RETURN": "Volver",
-    "CANCEL": "Cancelar"
+    "CANCEL": "Cancelar",
+    "NEXT": "Siguiente",
+    "UNDERSTOOD": "Entendido"
   },
   "ERRORS": {
     "USER_FORMAT": "Por favor ingrese un correo válido",
@@ -56,6 +69,9 @@
     "ORDER_LIST": "No pudimos obtener tus ordenes, intentalo más tarde",
     "LOAD_DATA": "No se cargaron los datos, intenta de nuevo",
     "TITLE": "Lo sentimos",
-    "USER": "Tu usuario no pudo ser generado"
+    "USER": "Tu usuario no pudo ser generado",
+    "NO_PRODUCTS":"No existen productos en esta panaderia",
+    "ERROR_PRODUCTS":"No pudimos obtener el listado de productos",
+    "ORDER_CREATE": "No pudimos generar tu orden, intenta más tarde"
   }
 }
