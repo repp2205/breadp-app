@@ -1,1 +1,41 @@
-<p>reports works!</p>
+<div>
+  <div class="reports-header">
+    <mat-form-field appearance="fill">
+      <mat-label>Selecciona la sucursal</mat-label>
+      <mat-select [(ngModel)]="branchOfficeSelected">
+        <mat-option *ngFor="let branchOffice of branchOfficeList" value="{{branchOffice.branchOfficeId}}">{{ branchOffice.name }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-raised-button color="warn" (click)="getOrdersByBranchOfficeId()" [disabled]="branchOfficeList.length === 0">
+      {{'BUTTONS.SEARCH' | translate}}
+    </button>
+  </div>
+  <table mat-table [dataSource]="orderList">
+    <ng-container matColumnDef="orderId">
+      <th mat-header-cell *matHeaderCellDef>ID</th>
+      <td mat-cell *matCellDef="let element">{{element.orderId}}</td>
+    </ng-container>
+    <ng-container matColumnDef="orderDate">
+      <th mat-header-cell *matHeaderCellDef>{{ 'LABELS.CREATION_DATE' | translate }}</th>
+      <td mat-cell *matCellDef="let element">{{element.orderDate}}</td>
+    </ng-container>
+    <ng-container matColumnDef="pickUpTime">
+      <th mat-header-cell *matHeaderCellDef>{{ 'LABELS.PICK_UP_DATE' | translate }}</th>
+      <td mat-cell *matCellDef="let element">{{element.pickUpTime}}</td>
+    </ng-container>
+    <ng-container matColumnDef="products">
+      <th mat-header-cell *matHeaderCellDef>{{ 'LABELS.PRODUCTS' | translate }}</th>
+      <td mat-cell *matCellDef="let element">{{element.products.length}}</td>
+    </ng-container>
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef>{{ 'LABELS.STATUS' | translate }}</th>
+      <td mat-cell *matCellDef="let element">
+        <span class="status {{getStatusOrder(element.status)}}">
+      {{ 'LABELS.' + getStatusOrder(element.status) | translate}}
+    </span>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

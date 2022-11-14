@@ -33,6 +33,7 @@ export class OrderComponent implements OnInit {
   }
 
   listOrders() {
+    this.orderList = [];
     if (this.role === 0) {
       this.getOrdersByUserId(Number(this.activitedRoute.snapshot.queryParams.u));
     } else {
@@ -74,6 +75,9 @@ export class OrderComponent implements OnInit {
     this.orderService.updateOrder(orderId, status).subscribe((response: any) => {
       this.listOrders();
     }, error => {
+      if (error.status === 200) {
+        this.listOrders();
+      }
       console.log(error);
     });
   }

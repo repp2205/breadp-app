@@ -1,0 +1,17 @@
+.reports-header{ display: flex; justify-content: center;margin: 1rem;align-items: flex-start;}
+.reports-header button{margin-left: 1rem; height: 53px;}
+table{width:100%}
+span.status {
+  padding: 5px;
+  border-radius: 26px;
+  color: #FFFFFF;
+}
+.DELIVERED {
+  background: #12af12;
+}
+.CREATED {
+  background: darkorange;
+}
+.CANCEL {
+  background: #d4001b;
+}
