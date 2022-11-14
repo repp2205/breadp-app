@@ -1,13 +1,16 @@
 <div>
   <div class="reports-header">
     <mat-form-field appearance="fill">
-      <mat-label>Selecciona la sucursal</mat-label>
+      <mat-label>{{ 'LABELS.SELECT_BRANCH' | translate }}</mat-label>
       <mat-select [(ngModel)]="branchOfficeSelected">
-        <mat-option *ngFor="let branchOffice of branchOfficeList" value="{{branchOffice.branchOfficeId}}">{{ branchOffice.name }}</mat-option>
+        <mat-option *ngFor="let branchOffice of branchOfficeList" value="{{ branchOffice.id }}">{{ branchOffice.name }}</mat-option>
       </mat-select>
     </mat-form-field>
-    <button mat-raised-button color="warn" (click)="getOrdersByBranchOfficeId()" [disabled]="branchOfficeList.length === 0">
+    <button mat-raised-button color="warn" (click)="getOrdersByBranchOfficeId()" [disabled]="branchOfficeSelected === 0">
       {{'BUTTONS.SEARCH' | translate}}
+    </button>
+    <button mat-raised-button color="warn" (click)="exportData(orderList.data)" [disabled]="branchOfficeSelected === 0 || orderList.data.length === 0">
+      {{'BUTTONS.DOWNLOAD' | translate}}
     </button>
   </div>
   <table mat-table [dataSource]="orderList">
@@ -25,7 +28,7 @@
     </ng-container>
     <ng-container matColumnDef="products">
       <th mat-header-cell *matHeaderCellDef>{{ 'LABELS.PRODUCTS' | translate }}</th>
-      <td mat-cell *matCellDef="let element">{{element.products.length}}</td>
+      <td mat-cell *matCellDef="let element">{{element.products?.length}}</td>
     </ng-container>
     <ng-container matColumnDef="status">
       <th mat-header-cell *matHeaderCellDef>{{ 'LABELS.STATUS' | translate }}</th>
@@ -38,4 +41,8 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
+  <mat-paginator #paginatorOrders [pageSizeOptions]="[10, 20, 30]"
+                 showFirstLastButtons aria-label="Select page of periodic elements"
+                 [length]="orderList.data.length">
+  </mat-paginator>
 </div>

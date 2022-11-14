@@ -24,6 +24,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { UserComponent } from './components/user/user.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
@@ -91,6 +92,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
         }),
       FormsModule,
       MatCardModule,
+      MatPaginatorModule,
       MatExpansionModule,
       NgxMaterialTimepickerModule,
 

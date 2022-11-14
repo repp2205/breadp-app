@@ -15,4 +15,10 @@ export class BakeryService {
       map((result: any) => result)
     );
   }
+
+  getBranchOfficeByBakery(bakeryId: number) {
+    return this.http.get(`${environment.API_ENDPOINT}/bakery/${bakeryId}`).pipe(
+      map((result: any) => result)
+    );
+  }
 }

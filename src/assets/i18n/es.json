@@ -41,7 +41,8 @@
     "TOTAL_VALUE": "Valor total",
     "CHOOSE_AMOUNT": "Escoge la cantidad",
     "ORDER_SUCCESS": "Tu orden fue creada exitosamente",
-    "ORDER_CODE": "Código de tu orden"
+    "ORDER_CODE": "Código de tu orden",
+    "SELECT_BRANCH":"Selecciona la sucursal"
   },
   "BUTTONS": {
     "LOGIN": "Ingresar",
@@ -74,6 +75,7 @@
     "USER": "Tu usuario no pudo ser generado",
     "NO_PRODUCTS":"No existen productos en esta panaderia",
     "ERROR_PRODUCTS":"No pudimos obtener el listado de productos",
-    "ORDER_CREATE": "No pudimos generar tu orden, intenta más tarde"
+    "ORDER_CREATE": "No pudimos generar tu orden, intenta más tarde",
+    "NO_ORDERS_BY_BRANCH_OFFICE": "No existen ordenes para la sucursal seleccionada"
   }
 }

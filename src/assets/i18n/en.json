@@ -41,7 +41,8 @@
     "TOTAL_VALUE": "Total value",
     "CHOOSE_AMOUNT": "Choose amount",
     "ORDER_SUCCESS": "Your order was created successfully",
-    "ORDER_CODE": "Code of your order"
+    "ORDER_CODE": "Code of your order",
+    "SELECT_BRANCH":"Select the branch"
   },
   "BUTTONS": {
     "LOGIN": "Login",
@@ -74,6 +75,7 @@
     "USER": "Your user did not put generated",
     "NO_PRODUCTS":"There are no products in this bakery",
     "ERROR_PRODUCTS":"We couldn't get the list of products",
-    "ORDER_CREATE": "We couldn't create your order, please try again later"
+    "ORDER_CREATE": "We couldn't create your order, please try again later",
+    "NO_ORDERS_BY_BRANCH_OFFICE": "There are no orders for the selected branch"
   }
 }
