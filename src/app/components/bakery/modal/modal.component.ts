@@ -1,6 +1,7 @@
 import { ActivatedRoute } from '@angular/router';
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatTableDataSource} from '@angular/material/table';
+import { DataService } from '../../../services/data.service';
 import { OrderService } from '../../../services/order.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
@@ -24,6 +25,7 @@ export class ModalComponent implements OnInit {
   constructor(public dialogRef: MatDialogRef<ModalComponent>,
               private activitedRoute: ActivatedRoute,
               private orderService: OrderService,
+              private dataService: DataService,
               @Inject(MAT_DIALOG_DATA) public data: any) {
 
     this.userId = 0;
@@ -104,6 +106,7 @@ export class ModalComponent implements OnInit {
     this.orderService.createOrder(order).subscribe((response: any) => {
       this.orderId = response.orderId;
       this.orderCreate = 'success';
+      this.dataService.order = Math.random().toString();
     }, error => {
       this.orderCreate = 'error';
     });

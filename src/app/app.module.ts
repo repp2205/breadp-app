@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AuthService } from './services/auth-service';
+import { DataService } from './services/data.service';
+import { UserService } from './services/user.service';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatMenuModule } from '@angular/material/menu';
-import { UserService } from './services/user.service';
 import { MatCardModule } from '@angular/material/card';
 import { OrderService } from './services/order.service';
 import { AppRoutingModule } from './app-routing.module';
@@ -100,6 +101,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   providers: [
     AuthService,
     UserService,
+    DataService,
     OrderService,
     ToastrService,
     ProductService,

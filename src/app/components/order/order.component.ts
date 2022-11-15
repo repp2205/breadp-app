@@ -2,6 +2,7 @@ import { ToastrService } from 'ngx-toastr';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { DataService } from '../../services/data.service';
 import { OrderService } from '../../services/order.service';
 import { MatTableDataSource } from '@angular/material/table';
 
@@ -19,6 +20,7 @@ export class OrderComponent implements OnInit {
 
   constructor(private orderService: OrderService,
               private activitedRoute: ActivatedRoute,
+              private dataService: DataService,
               private toastService: ToastrService,
               private translateService: TranslateService) {
     this.role = 0;
@@ -30,6 +32,10 @@ export class OrderComponent implements OnInit {
   ngOnInit(): void {
     this.role = Number(this.activitedRoute.snapshot.queryParams.r)
     this.listOrders();
+
+    this.dataService.order$.subscribe(() => {
+      this.listOrders();
+    });
   }
 
   listOrders() {
