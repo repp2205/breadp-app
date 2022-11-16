@@ -1,19 +1,30 @@
 <form novalidate [formGroup]="formRegister">
   <div class="container-header">
     <div class="container-header-img">
-
       <img class="bread-back" src="assets/img/background.jpg" style="width: 100%">
     </div>
     <div class="container-header-form">
       <img src="assets/img/logo.jpg">
       <mat-form-field appearance="fill">
         <mat-label>{{ 'LABELS.NAME' | translate }}</mat-label>
-        <input type="text" matInput formControlName="name" placeholder="{{ 'LABELS.NAME' | translate }}">
+        <input type="text" maxlength="30" matInput formControlName="name" placeholder="{{ 'LABELS.NAME' | translate }}">
+        <mat-error *ngIf="formRegister.controls.name.hasError('required')">
+          {{'ERRORS.OBLIGATORY_FIELD' | translate}}
+        </mat-error>
+        <mat-error *ngIf="formRegister.controls.name.hasError('pattern')">
+          El campo acepta solo letras
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="fill">
         <mat-label>{{ 'LABELS.LAST_NAME' | translate }}</mat-label>
-        <input type="text" matInput formControlName="lastName" placeholder="{{ 'LABELS.LAST_NAME' | translate }}">
+        <input type="text" maxlength="30" matInput formControlName="lastName" placeholder="{{ 'LABELS.LAST_NAME' | translate }}">
+        <mat-error *ngIf="formRegister.controls.lastName.hasError('required')">
+          {{'ERRORS.OBLIGATORY_FIELD' | translate}}
+        </mat-error>
+        <mat-error *ngIf="formRegister.controls.lastName.hasError('pattern')">
+          El campo acepta solo letras
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="fill">
@@ -29,7 +40,16 @@
 
       <mat-form-field appearance="fill">
         <mat-label>{{ 'LABELS.PHONE' | translate }}</mat-label>
-        <input type="text" matInput formControlName="phone" placeholder="{{ 'LABELS.PHONE' | translate }}">
+        <input type="text" maxlength="10" matInput formControlName="phone" placeholder="{{ 'LABELS.PHONE' | translate }}">
+        <mat-error *ngIf="formRegister.controls.phone.hasError('required')">
+          {{'ERRORS.OBLIGATORY_FIELD' | translate}}
+        </mat-error>
+        <mat-error *ngIf="formRegister.controls.phone.hasError('pattern')">
+          El campo acepta solo números
+        </mat-error>
+        <mat-error *ngIf="formRegister.controls.phone.hasError('minlength')">
+          El número de telefono debe tener mínimo 7 digitos
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="fill">

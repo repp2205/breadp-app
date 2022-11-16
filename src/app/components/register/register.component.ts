@@ -24,11 +24,13 @@ export class RegisterComponent implements OnInit {
     this.hide = true;
     this.hideConfirm = true;
     const regex = new RegExp('^\\w+([.-_+]?\\w+)*@\\w+([.-]?\\w+)*(\\.\\w{2,10})+$');
+    const regexString = new RegExp('^[a-zA-Z]+$');
+    const regexNumber = new RegExp('^[0-9]+$');
     this.formRegister = new FormGroup({
-      name: new FormControl('', [Validators.required]),
-      lastName: new FormControl('', [Validators.required]),
+      name: new FormControl('', [Validators.required, Validators.pattern(regexString)]),
+      lastName: new FormControl('', [Validators.required, Validators.pattern(regexString)]),
       email: new FormControl('', [Validators.required, Validators.pattern(regex)]),
-      phone: new FormControl('', [Validators.minLength(6), Validators.required]),
+      phone: new FormControl('', [Validators.minLength(7), Validators.required, Validators.pattern(regexNumber)]),
       password: new FormControl('', [Validators.minLength(6), Validators.required]),
       confirmPassword: new FormControl('', [Validators.minLength(6), Validators.required]),
       role: new FormControl(0, [Validators.required]),
@@ -56,12 +58,20 @@ export class RegisterComponent implements OnInit {
     }
     this.userService.register(user).subscribe((response: any) => {
       this.toastService.success(this.translateService.instant('LABELS.SUCCESS_USER'), this.translateService.instant('LABELS.SUCCESS_USER_TITLE'));
-      setTimeout(() => {
-        this.formRegister.reset(true);
-        this.router.navigate(['login']);
-      }, 5000);
+      this.successRegister();
     }, (error: any) => {
-      console.log(error);
+      if (error.status === 200) {
+        this.successRegister();
+      }
+      this.toastService.error(error.error.errors[0], this.translateService.instant('ERRORS.TITLE'));
     });
+  }
+
+  successRegister() {
+    this.toastService.success(this.translateService.instant('LABELS.SUCCESS_USER'), this.translateService.instant('LABELS.SUCCESS_USER_TITLE'));
+    setTimeout(() => {
+      this.formRegister.reset(true);
+      this.router.navigate(['login']);
+    }, 3000);
   }
 }
