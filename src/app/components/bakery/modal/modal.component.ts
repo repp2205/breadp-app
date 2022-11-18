@@ -12,12 +12,15 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class ModalComponent implements OnInit {
 
+  date: Date;
+  minDate: Date;
+  maxDate: Date;
   userId: number;
   categories: any;
-  pickupTime: string;
   orderId: string;
-  panelOpenState: boolean;
+  pickupTime: string;
   orderCreate: string;
+  panelOpenState: boolean;
   displayedColumns: string[];
   displayedColumnsResume: string[];
   productsSelectedList: MatTableDataSource<any>;
@@ -31,7 +34,10 @@ export class ModalComponent implements OnInit {
     this.userId = 0;
     this.orderId = '';
     this.orderCreate = '';
-    this.pickupTime = new Date().toString().substring(16, 21);
+    this.date = new Date();
+    this.minDate = new Date();
+    this.maxDate = this.addDays(new Date(), 2);
+    this.pickupTime = this.date.toString().substring(16, 21);
     this.panelOpenState = false;
     this.productsSelectedList = new MatTableDataSource();
     this.displayedColumns = ['name', 'image', 'totalAmount', 'selected'];
@@ -47,6 +53,13 @@ export class ModalComponent implements OnInit {
       });
       this.categories[category] = new MatTableDataSource(this.categories[category]);
     });
+  }
+
+
+  addDays(date: Date, days: number): Date {
+    let result = date;
+    result.setDate(result.getDate() + days);
+    return result;
   }
 
   ngOnInit(): void {
@@ -113,7 +126,7 @@ export class ModalComponent implements OnInit {
   }
 
   getFormatPickupTime(): string {
-    let date = new Date().toISOString().replace('T', ' ');
+    let date = this.date.toISOString().replace('T', ' ');
     date = date.substring(0, date.length - 5).replace(date.substring(11, 16), this.pickupTime);
     return date;
   }

@@ -42,7 +42,8 @@
     "CHOOSE_AMOUNT": "Choose amount",
     "ORDER_SUCCESS": "Your order was created successfully",
     "ORDER_CODE": "Code of your order",
-    "SELECT_BRANCH":"Select the branch"
+    "SELECT_BRANCH":"Select the branch",
+    "CHOOSE_DATE": "Choose a date"
   },
   "BUTTONS": {
     "LOGIN": "Login",

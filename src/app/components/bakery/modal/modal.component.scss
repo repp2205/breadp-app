@@ -26,3 +26,13 @@ img {
 .italic {
   font-style: italic;
 }
+.step2-container {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 1rem auto;
+  width: 60%;
+  align-items: baseline;
+}
+::ng-deep ngx-material-timepicker-toggle {
+  display: none;
+}

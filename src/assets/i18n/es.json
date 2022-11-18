@@ -42,7 +42,8 @@
     "CHOOSE_AMOUNT": "Escoge la cantidad",
     "ORDER_SUCCESS": "Tu orden fue creada exitosamente",
     "ORDER_CODE": "Código de tu orden",
-    "SELECT_BRANCH":"Selecciona la sucursal"
+    "SELECT_BRANCH":"Selecciona la sucursal",
+    "CHOOSE_DATE": "Escoge una fecha"
   },
   "BUTTONS": {
     "LOGIN": "Ingresar",

@@ -21,24 +21,27 @@ import { CustomValidators } from './utils/CustomValidators';
 import { ProductService } from './services/product.service';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatStepperModule } from '@angular/material/stepper';
+import { MatNativeDateModule } from '@angular/material/core';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { UserComponent } from './components/user/user.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
 import { OrderComponent } from './components/order/order.component';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { BakeryComponent } from './components/bakery/bakery.component';
+import { ReportsComponent } from './components/reports/reports.component';
 import { ModalComponent } from './components/bakery/modal/modal.component';
 import { RegisterComponent } from './components/register/register.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { ViewInternalComponent } from './components/view-internal/view-internal.component';
 import { AdministratorComponent } from './components/administrator/administrator.component';
-import { ReportsComponent } from './components/reports/reports.component';
+
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
@@ -58,24 +61,26 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     ReportsComponent,
   ],
     imports: [
-        BrowserModule,
-        MatIconModule,
-        MatListModule,
-        MatInputModule,
-        MatMenuModule,
-        MatTabsModule,
-        MatTableModule,
-        MatButtonModule,
-        MatSelectModule,
-        MatDialogModule,
-        MatSidenavModule,
-        MatDividerModule,
-        MatStepperModule,
-        AppRoutingModule,
-        HttpClientModule,
-        ReactiveFormsModule,
-        BrowserAnimationsModule,
-        TranslateModule.forRoot({
+      BrowserModule,
+      MatIconModule,
+      MatListModule,
+      MatInputModule,
+      MatMenuModule,
+      MatTabsModule,
+      MatTableModule,
+      MatButtonModule,
+      MatSelectModule,
+      MatDialogModule,
+      MatSidenavModule,
+      MatDividerModule,
+      MatStepperModule,
+      AppRoutingModule,
+      HttpClientModule,
+      ReactiveFormsModule,
+      MatDatepickerModule,
+      MatNativeDateModule,
+      BrowserAnimationsModule,
+      TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,
                 useFactory: HttpLoaderFactory,
