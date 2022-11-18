@@ -29,8 +29,10 @@
       <button  mat-raised-button color="primary" [disabled]="formLogin.invalid" (click)="login()">
         {{'BUTTONS.LOGIN' | translate}}
       </button>
-
-      <a (click)="goToRegister()" class="register">{{ 'BUTTONS.REGISTER' | translate}}</a>
+      <div style="text-align: center;">
+        <a (click)="goToRegister()" class="register">{{ 'BUTTONS.REGISTER' | translate}}</a><br/>
+        <a (click)="recoverPassword()" class="register">Olvide mi clave</a>
+      </div>
     </div>
   </div>
 </form>

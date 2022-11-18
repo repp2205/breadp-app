@@ -1,0 +1,17 @@
+<div>
+  <h1>Olvido de clave</h1>
+  <p>Ingresa tu usuario y te enviaremos un correo para que restablezcas tus credenciales</p>
+  <form novalidate [formGroup]="formRecover">
+    <mat-form-field appearance="fill">
+      <mat-label>{{'LABELS.USER' | translate}}</mat-label>
+      <input type="email" matInput formControlName="user" placeholder="{{'LABELS.USER_PLACEHOLDER' | translate}}">
+      <mat-error *ngIf="formRecover.controls.user.hasError('pattern')">
+        {{'ERRORS.USER_FORMAT' | translate}}
+      </mat-error>
+      <mat-error *ngIf="formRecover.controls.user.hasError('required')">
+        {{'ERRORS.USER_REQUIRED' | translate}}
+      </mat-error>
+    </mat-form-field>
+  </form>
+  <button (click)="recoverPassword()" [disabled]="!formRecover.valid" color="primary" mat-button>Enviar</button>
+</div>

@@ -35,13 +35,14 @@ import { OrderComponent } from './components/order/order.component';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { BakeryComponent } from './components/bakery/bakery.component';
 import { ReportsComponent } from './components/reports/reports.component';
+import { RecoverComponent } from './components/recover/recover.component';
 import { ModalComponent } from './components/bakery/modal/modal.component';
 import { RegisterComponent } from './components/register/register.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ModalRecoverComponent } from './components/login/modal/modal.component';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { ViewInternalComponent } from './components/view-internal/view-internal.component';
 import { AdministratorComponent } from './components/administrator/administrator.component';
-
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
@@ -56,9 +57,11 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     ModalComponent,
     BakeryComponent,
     RegisterComponent,
+    ModalRecoverComponent,
     ViewInternalComponent,
     AdministratorComponent,
     ReportsComponent,
+    RecoverComponent,
   ],
     imports: [
       BrowserModule,

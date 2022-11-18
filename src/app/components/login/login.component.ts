@@ -1,8 +1,10 @@
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { TranslateService } from '@ngx-translate/core';
 import { UserService } from '../../services/user.service';
+import { ModalRecoverComponent } from './modal/modal.component';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -16,6 +18,7 @@ export class LoginComponent implements OnInit {
   formLogin: FormGroup;
 
   constructor(private router: Router,
+              public dialog: MatDialog,
               private userService: UserService,
               private toastService: ToastrService,
               private translateService: TranslateService) {
@@ -51,6 +54,16 @@ export class LoginComponent implements OnInit {
 
   goToRegister(): void {
     this.router.navigate(['register']);
+  }
+
+  recoverPassword() {
+    const dialogRef = this.dialog.open(ModalRecoverComponent, {
+      width: '600px',
+      data: {}
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
   }
 
 }
