@@ -1,11 +1,10 @@
-import { ActivatedRoute } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { TranslateService } from '@ngx-translate/core';
 import { Component, Inject, OnInit } from '@angular/core';
-import { MatTableDataSource} from '@angular/material/table';
-import { DataService } from '../../../services/data.service';
-import { OrderService } from '../../../services/order.service';
+import { UserService } from '../../../services/user.service';
+import { ModalComponent } from '../../bakery/modal/modal.component';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import {ModalComponent} from "../../bakery/modal/modal.component";
-import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-modal',
@@ -17,6 +16,9 @@ export class ModalRecoverComponent implements OnInit {
   formRecover: FormGroup;
 
   constructor(public dialogRef: MatDialogRef<ModalComponent>,
+              private userService: UserService,
+              private toastService: ToastrService,
+              private translateService: TranslateService,
               @Inject(MAT_DIALOG_DATA) public data: any) {
     const regex = new RegExp('^\\w+([.-_+]?\\w+)*@\\w+([.-]?\\w+)*(\\.\\w{2,10})+$');
     this.formRecover = new FormGroup({
@@ -28,7 +30,22 @@ export class ModalRecoverComponent implements OnInit {
   ngOnInit(): void {}
 
   recoverPassword() {
-    this.dialogRef.close();
+    this.userService.recoverUser(this.formRecover.controls.user.value).subscribe((response: any) => {
+      this.success();
+    }, (error: any) => {
+      if (error.status === 200) {
+        this.success();
+      } else {
+        this.toastService.error(this.translateService.instant('ERRORS.RECOVER_SEND'), this.translateService.instant('ERRORS.TITLE'));
+      }
+    });
+  }
+
+  success() {
+    this.toastService.success(this.translateService.instant('LABELS.RECOVER_SEND_SUCCESS'), this.translateService.instant('LABELS.RECOVER_SEND_SUCCESS_TITLE'));
+    setTimeout(() => {
+      this.dialogRef.close();
+    },2000);
   }
 
 }

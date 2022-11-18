@@ -43,7 +43,9 @@
     "ORDER_SUCCESS": "Tu orden fue creada exitosamente",
     "ORDER_CODE": "Código de tu orden",
     "SELECT_BRANCH":"Selecciona la sucursal",
-    "CHOOSE_DATE": "Escoge una fecha"
+    "CHOOSE_DATE": "Escoge una fecha",
+    "RECOVER_SEND_SUCCESS_TITLE": "¡Te hemos enviado un correo!",
+    "RECOVER_SEND_SUCCESS": "Verifica tu buzón y sigue los pasos para restablecer tu contraseña"
   },
   "BUTTONS": {
     "LOGIN": "Ingresar",
@@ -77,6 +79,7 @@
     "NO_PRODUCTS":"No existen productos en esta panaderia",
     "ERROR_PRODUCTS":"No pudimos obtener el listado de productos",
     "ORDER_CREATE": "No pudimos generar tu orden, intenta más tarde",
-    "NO_ORDERS_BY_BRANCH_OFFICE": "No existen ordenes para la sucursal seleccionada"
+    "NO_ORDERS_BY_BRANCH_OFFICE": "No existen ordenes para la sucursal seleccionada",
+    "RECOVER_SEND": "No pudminos enviarte el correo para restablecer tu contraseñæ"
   }
 }

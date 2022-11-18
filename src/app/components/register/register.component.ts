@@ -24,7 +24,7 @@ export class RegisterComponent implements OnInit {
     this.hide = true;
     this.hideConfirm = true;
     const regex = new RegExp('^\\w+([.-_+]?\\w+)*@\\w+([.-]?\\w+)*(\\.\\w{2,10})+$');
-    const regexString = new RegExp('^[a-zA-Z]+$');
+    const regexString = new RegExp('^[a-zA-Z ]*$');
     const regexNumber = new RegExp('^[0-9]+$');
     this.formRegister = new FormGroup({
       name: new FormControl('', [Validators.required, Validators.pattern(regexString)]),

@@ -22,4 +22,9 @@ export class UserService {
     );
   }
 
+  recoverUser(user: string): any {
+    return this.http.post(`${environment.API_ENDPOINT}/user/recover?email=${user}`, {}).pipe(
+      map((result: any) => result)
+    );
+  }
 }
