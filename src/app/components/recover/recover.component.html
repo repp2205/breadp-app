@@ -1,1 +1,51 @@
-<p>En proceso de desarrollo!</p>
+<form novalidate [formGroup]="formRecover">
+  <div class="container-header">
+    <div class="container-header-img">
+      <img class="bread-back" src="assets/img/background.jpg" style="width: 100%">
+    </div>
+    <div class="container-header-form">
+      <img src="assets/img/logo.jpg">
+
+      <mat-form-field appearance="fill">
+        <mat-label>{{'LABELS.PASSWORD' | translate}}</mat-label>
+        <input type="password" matInput formControlName="password" [type]="hide ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-error *ngIf="formRecover.controls.password.hasError('required')">
+          {{'ERRORS.PASSWORD_REQUIRED' | translate}}
+        </mat-error>
+        <mat-error *ngIf="formRecover.controls.password.hasError('minlength')">
+          {{'ERRORS.PASSWORD_PATTERN' | translate}}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>{{'LABELS.CONFIRM_PASSWORD' | translate}} *</mat-label>
+        <input formControlName="confirmPassword" type="password"  matInput [type]="hideConfirm ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="hideConfirm = !hideConfirm" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hideConfirm">
+          <mat-icon>{{hideConfirm ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-error *ngIf="formRecover.controls.confirmPassword.hasError('required')">
+          {{'ERRORS.PASSWORD_REQUIRED' | translate}}
+        </mat-error>
+        <mat-error *ngIf="formRecover.controls.confirmPassword.hasError('minlength')">
+          {{'ERRORS.PASSWORD_PATTERN' | translate}}
+        </mat-error>
+        <mat-error *ngIf="formRecover.controls.confirmPassword.hasError('matching')">
+          {{'ERRORS.PASSWORD_COINCIDE' | translate}}
+        </mat-error>
+      </mat-form-field>
+
+      <div class="container-header-button">
+        <button  mat-raised-button (click)="goToLogin()">
+          {{ 'BUTTONS.RETURN' | translate}}
+        </button>
+        <button  mat-raised-button color="primary" [disabled]="formRecover.invalid" (click)="recoverPassword()">
+          {{ 'BUTTONS.SAVE' | translate}}
+        </button>
+      </div>
+    </div>
+  </div>
+</form>
+

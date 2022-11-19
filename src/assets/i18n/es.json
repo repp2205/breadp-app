@@ -45,7 +45,9 @@
     "SELECT_BRANCH":"Selecciona la sucursal",
     "CHOOSE_DATE": "Escoge una fecha",
     "RECOVER_SEND_SUCCESS_TITLE": "¡Te hemos enviado un correo!",
-    "RECOVER_SEND_SUCCESS": "Verifica tu buzón y sigue los pasos para restablecer tu contraseña"
+    "RECOVER_SEND_SUCCESS": "Verifica tu buzón y sigue los pasos para restablecer tu contraseña",
+    "RECOVER_SUCCESS": "Tu contraseña ha sido restablecida correctamente",
+    "RECOVER_PASSWORD": "Olvido de contraseña"
   },
   "BUTTONS": {
     "LOGIN": "Ingresar",
@@ -80,6 +82,7 @@
     "ERROR_PRODUCTS":"No pudimos obtener el listado de productos",
     "ORDER_CREATE": "No pudimos generar tu orden, intenta más tarde",
     "NO_ORDERS_BY_BRANCH_OFFICE": "No existen ordenes para la sucursal seleccionada",
-    "RECOVER_SEND": "No pudminos enviarte el correo para restablecer tu contraseñæ"
+    "RECOVER_SEND": "No pudminos enviarte el correo para restablecer tu contraseñæ",
+    "RECOVER_FAILED": "No pudimos restablecer tu contraseña, intenta más tarde"
   }
 }

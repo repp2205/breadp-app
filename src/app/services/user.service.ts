@@ -27,4 +27,10 @@ export class UserService {
       map((result: any) => result)
     );
   }
+
+  updatePassword(userId: number, body: any): any {
+    return this.http.put(`${environment.API_ENDPOINT}/user/${userId}`, body).pipe(
+      map((result: any) => result)
+    );
+  }
 }

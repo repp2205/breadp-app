@@ -45,7 +45,9 @@
     "SELECT_BRANCH":"Select the branch",
     "CHOOSE_DATE": "Choose a date",
     "RECOVER_SEND_SUCCESS_TITLE": "We have sent you an email!",
-    "RECOVER_SEND_SUCCESS": "Verify your mailbox and follow the steps to reset your password"
+    "RECOVER_SEND_SUCCESS": "Verify your mailbox and follow the steps to reset your password",
+    "RECOVER_SUCCESS": "Your password has been successfully reset",
+    "RECOVER_PASSWORD": "Forgot password"
   },
   "BUTTONS": {
     "LOGIN": "Login",
@@ -80,6 +82,7 @@
     "ERROR_PRODUCTS":"We couldn't get the list of products",
     "ORDER_CREATE": "We couldn't create your order, please try again later",
     "NO_ORDERS_BY_BRANCH_OFFICE": "There are no orders for the selected branch",
-    "RECOVER_SEND": "We couldn't send you the email to reset your password"
+    "RECOVER_SEND": "We couldn't send you the email to reset your password",
+    "RECOVER_FAILED": "We couldn't reset your password, please try again later"
   }
 }
