@@ -36,3 +36,7 @@ img {
 ::ng-deep ngx-material-timepicker-toggle {
   display: none;
 }
+
+::ng-deep mat-expansion-panel {
+  overflow: scroll;
+}
