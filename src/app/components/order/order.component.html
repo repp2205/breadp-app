@@ -6,8 +6,8 @@
     </span>
   </div>
   <mat-card-subtitle>
-    {{ 'LABELS.CREATION_DATE' | translate}}: {{order.orderDate}} /
-    {{ 'LABELS.PICK_UP_DATE' | translate}}: {{order.pickUpTime}}
+    {{ 'LABELS.CREATION_DATE' | translate}}: {{ order.orderDate.substring(0 , order.orderDate.length - 5) }} /
+    {{ 'LABELS.PICK_UP_DATE' | translate}}: {{ order.pickUpTime.substring(0 , order.pickUpTime.length - 5) }}
   </mat-card-subtitle>
   <mat-card-content>
     <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
