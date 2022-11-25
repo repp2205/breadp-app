@@ -37,6 +37,6 @@ img {
   display: none;
 }
 
-::ng-deep mat-expansion-panel {
-  overflow: scroll;
+::ng-deep .mat-expansion-panel-content {
+  overflow: auto;
 }
